@@ -1,5 +1,5 @@
 import unittest
-from calculator import *
+import calculator
 
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
@@ -11,12 +11,15 @@ class TestCalculator(unittest.TestCase):
     # ##########################
 
     ######## Partner 1
-    # def test_multiply(self): # 3 assertions
-    #     fill in code
+    def test_multiply(self): # 3 assertions
+        self.assertEqual(calculator.multiply(2, 3), 6)
+        self.assertEqual(calculator.multiply(-1, 7), -7)
+        self.assertEqual(calculator.multiply(0, 567), 0)
 
-    # def test_divide(self): # 3 assertions
-    #     fill in code
-    # ##########################
+    def test_divide(self): # 3 assertions
+        self.assertEqual(calculator.divide(12, 2), 6)
+        self.assertAlmostEqual(calculator.divide(3, 2), 1.5, places=7)
+        self.assertEqual(calculator.divide(-21, 3), -7)
 
     ######## Partner 2
     # def test_divide_by_zero(self): # 1 assertion
@@ -34,22 +37,21 @@ class TestCalculator(unittest.TestCase):
     # ##########################
     
     ######## Partner 1
-    # def test_log_invalid_argument(self): # 1 assertion
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
+    def test_log_invalid_argument(self): # 1 assertion
+        with self.assertRaises(ValueError):
+            calculator.logarithm(0, 10)
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
+    def test_hypotenuse(self): # 3 assertions
+        self.assertEqual(calculator.hypotenuse(3, 4), 5)
+        self.assertAlmostEqual(calculator.hypotenuse(5, 12), 13, places=7)
+        self.assertAlmostEqual(calculator.hypotenuse(8, 15), 17, places=7)
 
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
-    ##########################
+    def test_sqrt(self): # 3 assertions
+        self.assertEqual(calculator.sqrt(25), 5)
+        self.assertAlmostEqual(calculator.sqrt(2), 1.41421356, places=7)# 3 assertions
+        with self.assertRaises(ValueError):
+            calculator.sqrt(-3)
+
 
 # Do not touch this
 if __name__ == "__main__":
