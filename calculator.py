@@ -1,3 +1,7 @@
+# https://github.com/graysonchristie/lab11-GC-BF/
+# Partner 1: Grayson Christie
+# Partner 2: Blake Fowler
+
 """
 calculator.py
 - Defines functions used to create a simple calculator
