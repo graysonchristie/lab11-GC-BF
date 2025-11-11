@@ -52,7 +52,6 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculator.sqrt(-3)
 
-
 # Do not touch this
 if __name__ == "__main__":
     unittest.main()
